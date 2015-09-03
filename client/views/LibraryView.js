@@ -5,6 +5,9 @@ var LibraryView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
+    this.collection.on('update',function() {
+      this.render();
+    }, this);
   },
 
   render: function(){
@@ -18,5 +21,5 @@ var LibraryView = Backbone.View.extend({
       })
     );
   }
-
+  
 });
